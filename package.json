@@ -1,17 +1,28 @@
 {
   "name": "connect_db",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rashadul-Haque-JS/database-test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rashadul-Haque-JS/database-test/issues"
+  },
+  "homepage": "https://github.com/Rashadul-Haque-JS/database-test#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
-  }
+    "nodemon": "^2.0.15",
+    "promised-sqlite3": "^1.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
 }

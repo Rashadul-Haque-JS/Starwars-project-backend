@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="char-details">
+                <form action="/charsCard" methods="POST">
+                    <select name="names" id="char">
+                        <% for (let char of characters){%>
+                        <option value="">
+                            <%=char.name%>
+                        </option>
+                        <%}%>
+                    </select>
+                    <select name="height" id="char">
+                        <% for (let char of characters){%>
+                            <option value="">
+                                <%=char.height%>
+                            </option>
+                            <%}%>
+                    </select>
+                    <select name="dob" id="char">
+                        <% for (let char of characters){%>
+                            <option value="">
+                                <%=char.birth_year%>
+                            </option>
+                            <%}%>>
+                    </select>
+                    <select name="gender" id="char" aria-placeholder="gender">
+                        <% for (let char of characters){%>
+                            <option value="">
+                                <%=char.gender%>
+                            </option>
+                            <%}%>
+                    </select>
+                    <button>GET CARD</button>
+                </form>
+                
+        </div>
+    </body>
+
+</html>
