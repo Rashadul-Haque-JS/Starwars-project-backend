@@ -5,43 +5,93 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
         <title>Document</title>
+        <script src="/index.js" type="module" defer></script>
     </head>
 
-    <body>
-        <div class="char-details">
-                <form action="/charsCard" methods="POST">
-                    <select name="names" id="char">
-                        <% for (let char of characters){%>
-                        <option value="">
+    <body class="char-details">
+        <h1 class="page-title">STAR WARS</h1>
+        <div class="char-container">
+            <p class="info">Build cards with your favourite characters</p>
+            
+            <form class="set-card" action="/charsCard" method="POST">
+                
+                <select name="name" class="char">
+                    <option class="label" value="">Name</option>
+                    <% for (let char of characters){%>
+                        <option value='<%= char.name %>'>
                             <%=char.name%>
                         </option>
                         <%}%>
-                    </select>
-                    <select name="height" id="char">
-                        <% for (let char of characters){%>
-                            <option value="">
-                                <%=char.height%>
-                            </option>
-                            <%}%>
-                    </select>
-                    <select name="dob" id="char">
-                        <% for (let char of characters){%>
-                            <option value="">
-                                <%=char.birth_year%>
-                            </option>
-                            <%}%>>
-                    </select>
-                    <select name="gender" id="char" aria-placeholder="gender">
-                        <% for (let char of characters){%>
-                            <option value="">
-                                <%=char.gender%>
-                            </option>
-                            <%}%>
-                    </select>
-                    <button>GET CARD</button>
-                </form>
+                </select>
                 
+                
+                <select name="dob" class="char">
+                    <option class="label" value="">Data of birth</option>
+                    <% for (let char of characters){%>
+                        
+                        <option value='<%=char.birth_year%>'>
+                            <%=char.birth_year%>
+                        </option>
+                        <%}%>>
+                </select>
+                
+                <select name="vehicle" class="char">
+                    <option class="label" value="">Vehicles</option>
+                    <% for (let vehicle of vehicles){%>
+                        
+                        <option value='<%=vehicle.name%>'>
+                            <%=vehicle.name%>
+                        </option>
+                        <%}%>
+                </select>
+               
+                <select name="starship" class="char">
+                    <option class="label" value="">Starship</option>
+                    <% for (let starship of starships){%>
+                       
+                        <option value='<%=starship.name%>'>
+                            <%=starship.name%>
+                        </option>
+                        <%}%>
+                </select>
+                
+                <select name="planet" class="char">
+                    <option class="label" value="">Planet</option>
+                    <% for (let planet of planets){%>
+                       
+                        <option value='<%=planet.name%>'>
+                            <%=planet.name%>
+                        </option>
+                        <%}%>
+                </select>
+                
+                <select name="galaxy" class="char">
+                    <option class="label" value="">Galaxy</option>
+
+                    <option value='GFFA'>
+                        GFFA
+                    </option>
+
+                </select>
+                <button>GET CARD</button>
+                
+            </form>
+
+            <form class="page" action="/charDet" method="POST">
+                <select name="page" class="char">
+                    <option class="label" value="">Load more pages</option>
+                    <% for (let i= 1; i<11; i++){%>
+                       
+                        <option value='<%=i%>'>
+                            <%=i%>
+                        </option>
+                        <%}%>
+                </select>
+                <button class="btn-reload">LOAD</button>
+            </form>
+
         </div>
     </body>
 

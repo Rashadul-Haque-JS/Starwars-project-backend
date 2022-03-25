@@ -10,26 +10,33 @@
     </head>
 
     <body class="wrapper">
-        <h1>STAR WARS</h1>
+        <h1 class="page-title">STAR WARS</h1>
         <div class="container">
             <% for (let fighter of starfighters){%>
                 <article>
                     <h2>
-                        <%= fighter.FirstName%>
-                            <%= fighter.LastName%>
+                        <%= fighter.name%>
                     </h2>
                     <p>
-                        Planet: <%= fighter.Planet%>
+                        DOB: <%= fighter.dob%>
                     </p>
                     <p>
-                        Galaxy: <%= fighter.Galaxy%>
+                        Vehicle: <%= fighter.vehicle%>
+                    </p>
+
+                    <p>
+                        Starship: <%= fighter.starship%>
                     </p>
                     <p>
-                        Email: <%= fighter.Email%>
+                        Planet: <%= fighter.planet%>
+                    </p>
+                    <p>
+                        Galaxy: <%= fighter.galaxy%>
                     </p>
                 </article>
                 <%}%>
         </div>
+        <a class="home-navigation" href="/">ADD MORE</a>
     </body>
 
 </html>
