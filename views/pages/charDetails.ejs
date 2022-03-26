@@ -7,68 +7,73 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/style.css">
         <title>Document</title>
-        <script src="/index.js" type="module" defer></script>
+
     </head>
 
     <body class="char-details">
         <h1 class="page-title">STAR WARS</h1>
         <div class="char-container">
-            <p class="info">Build cards with your favourite characters</p>
-            
+            <section  class="info">
+                <h2>Create cards with your favourite characters</h2>
+                <p>Characters from page no. <%=pageNumber%>
+                </p>
+            </section>
+
+
             <form class="set-card" action="/charsCard" method="POST">
-                
+
                 <select name="name" class="char">
-                    <option class="label" value="">Name</option>
+                    <option class="label" value=""> Select Name</option>
                     <% for (let char of characters){%>
                         <option value='<%= char.name %>'>
                             <%=char.name%>
                         </option>
                         <%}%>
                 </select>
-                
-                
+
+
                 <select name="dob" class="char">
-                    <option class="label" value="">Data of birth</option>
+                    <option class="label" value="">Select Data Of Birth</option>
                     <% for (let char of characters){%>
-                        
+
                         <option value='<%=char.birth_year%>'>
                             <%=char.birth_year%>
                         </option>
                         <%}%>>
                 </select>
-                
+
                 <select name="vehicle" class="char">
-                    <option class="label" value="">Vehicles</option>
+                    <option class="label" value="">Select Vehicles</option>
                     <% for (let vehicle of vehicles){%>
-                        
+
                         <option value='<%=vehicle.name%>'>
                             <%=vehicle.name%>
                         </option>
                         <%}%>
                 </select>
-               
+
                 <select name="starship" class="char">
-                    <option class="label" value="">Starship</option>
+                    <option class="label" value="">Select Starship</option>
                     <% for (let starship of starships){%>
-                       
+
                         <option value='<%=starship.name%>'>
                             <%=starship.name%>
                         </option>
                         <%}%>
                 </select>
-                
+
                 <select name="planet" class="char">
-                    <option class="label" value="">Planet</option>
+                    <option class="label" value="">Select Planet</option>
                     <% for (let planet of planets){%>
-                       
+
                         <option value='<%=planet.name%>'>
                             <%=planet.name%>
                         </option>
                         <%}%>
                 </select>
-                
+
                 <select name="galaxy" class="char">
-                    <option class="label" value="">Galaxy</option>
+                    <option class="label" value="">Select Galaxy</option>
 
                     <option value='GFFA'>
                         GFFA
@@ -76,23 +81,24 @@
 
                 </select>
                 <button>GET CARD</button>
-                
+
             </form>
 
-            <form class="page" action="/charDet" method="POST">
+            <form class="pagination" action="/charDet" method="POST">
                 <select name="page" class="char">
-                    <option class="label" value="">Load more pages</option>
-                    <% for (let i= 1; i<11; i++){%>
-                       
+                    <option class="label" value="">Select Another Page</option>
+                    <% for (let i=1; i<10; i++){%>
+
                         <option value='<%=i%>'>
                             <%=i%>
                         </option>
                         <%}%>
                 </select>
-                <button class="btn-reload">LOAD</button>
+                <button class="btn-reload">LOAD PAGE</button>
             </form>
 
         </div>
+        <script src="/index.js"></script>
     </body>
 
 </html>

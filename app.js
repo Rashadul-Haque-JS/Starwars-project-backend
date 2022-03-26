@@ -13,11 +13,11 @@ let planets;
 let starships;
 let vehicles;
 let starfighters = []
-let pageNum = 1
+let pageNumber = 1
 
 
 async function getResponse() {
-    characters = await getData.fetchChar(axios, pageNum);
+    characters = await getData.fetchChar(axios, pageNumber);
     planets = await getData.fetchPlanets(axios)
     starships = await getData.fetchStarships(axios)
     vehicles = await getData.fetchVehicles(axios)
@@ -45,7 +45,8 @@ app.post('/charDet', async (req, res) => {
     let character = await getData.fetchChar(axios, page);
 
     characters = character
-    console.log(characters)
+
+    pageNumber = page
 
     }else {
     console.log('no page found')
@@ -57,7 +58,7 @@ app.post('/charDet', async (req, res) => {
 
 app.get('/', (req, res) => {
 
-res.render('pages/charDetails', { characters, planets, starships, vehicles })
+res.render('pages/charDetails', { characters, planets, starships, vehicles, pageNumber})
 
 })
 

@@ -1,5 +1,22 @@
 
+const button = document.querySelector('.btn-reload')
+button.addEventListener('click', () => {
 
-document.querySelector(".btn-reload").addEventListener("click", function reload(){
-    reload=location.reload();
-  })
+  setTimeout(() => {
+    window.location.reload()
+
+  }, 1000)
+
+  console.log('....Reloaded')
+
+
+})
+
+
+
+
+
+
+
+
+

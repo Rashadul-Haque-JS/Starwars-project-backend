@@ -10,31 +10,36 @@
     </head>
 
     <body class="wrapper">
-        <h1 class="page-title">STAR WARS</h1>
+        <h1 class="page-sub-title">Far Far Away</h1>
         <div class="container">
-            <% for (let fighter of starfighters){%>
-                <article>
-                    <h2>
-                        <%= fighter.name%>
-                    </h2>
-                    <p>
-                        DOB: <%= fighter.dob%>
-                    </p>
-                    <p>
-                        Vehicle: <%= fighter.vehicle%>
-                    </p>
-
-                    <p>
-                        Starship: <%= fighter.starship%>
-                    </p>
-                    <p>
-                        Planet: <%= fighter.planet%>
-                    </p>
-                    <p>
-                        Galaxy: <%= fighter.galaxy%>
-                    </p>
-                </article>
-                <%}%>
+            <% if(starfighters.length > 0){ %>
+                <% for (let fighter of starfighters){%>
+                    <article>
+                        <h2>
+                            <%= fighter.name%>
+                        </h2>
+                        <p>
+                            DOB: <%= fighter.dob%>
+                        </p>
+                        <p>
+                            Vehicle: <%= fighter.vehicle%>
+                        </p>
+    
+                        <p>
+                            Starship: <%= fighter.starship%>
+                        </p>
+                        <p>
+                            Planet: <%= fighter.planet%>
+                        </p>
+                        <p>
+                            Galaxy: <%= fighter.galaxy%>
+                        </p>
+                    </article>
+                    <%}%>
+                <% } else { %>
+                <p class="mgs">You haven't create any card yet!</p>
+                <% } %>
+           
         </div>
         <a class="home-navigation" href="/">ADD MORE</a>
     </body>
