@@ -58,7 +58,7 @@ app.post('/charDet', async (req, res) => {
 
 app.get('/', (req, res) => {
 
-res.render('pages/charDetails', { characters, planets, starships, vehicles, pageNumber})
+res.render('pages/charDetails', { characters, planets, starships, vehicles,starfighters, pageNumber})
 
 })
 

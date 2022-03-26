@@ -13,12 +13,16 @@
     <body class="char-details">
         <h1 class="page-title">STAR WARS</h1>
         <div class="char-container">
-            <section  class="info">
-                <h2>Create cards with your favourite characters</h2>
-                <p>Characters from page no. <%=pageNumber%>
+            <h2>CREATE CARD WITH YOUR FAVOURITE CHARACTERS</h2>
+            <section class="info">
+                <p class="others">PAGE # <span>
+                        <%=pageNumber%>
+                    </span>
                 </p>
+                <p class="others">CARDS CREATED # <span>
+                        <%=starfighters.length%>
+                    </span></p>
             </section>
-
 
             <form class="set-card" action="/charsCard" method="POST">
 
@@ -30,10 +34,8 @@
                         </option>
                         <%}%>
                 </select>
-
-
                 <select name="dob" class="char">
-                    <option class="label" value="">Select Data Of Birth</option>
+                    <option class="label" value="">Select Date Of Birth</option>
                     <% for (let char of characters){%>
 
                         <option value='<%=char.birth_year%>'>
